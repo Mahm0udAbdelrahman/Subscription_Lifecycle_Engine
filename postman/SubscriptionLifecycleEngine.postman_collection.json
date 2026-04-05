@@ -1,0 +1,996 @@
+{
+  "info": {
+    "_postman_id": "63684eec-3d6a-4591-8644-8a8f2d443538",
+    "name": "SubscriptionLifecycleEngine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35167378"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "mahmoud",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "mahmoud@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "+201146613334",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text"
+                },
+                {
+                  "key": "password confirmation",
+                  "value": "123456789",
+                  "type": "text"
+                },
+                {
+                  "key": "fcm_token",
+                  "value": "token",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "customer",
+                  "description": "customer,supplier,representative",
+                  "type": "text",
+                  "uuid": "ea34c1ab-3b3e-4601-a166-65c8f7121a91"
+                },
+                {
+                  "key": "city_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "f562388a-6a7d-4905-8c26-b639f71093e6"
+                },
+                {
+                  "key": "hotel_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "14ce5523-d326-4e61-a5ab-f266f413c573"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/register",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "otp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "01146613334",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/otp",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "otp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verfiy",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {
+              "accept": true
+            }
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "011466133334",
+                  "type": "text"
+                },
+                {
+                  "key": "otp",
+                  "value": "6524",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/verify",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "verify"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "011466133334",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "description": "https://tashtibuk.rab7e.com/api",
+                  "type": "text"
+                },
+                {
+                  "key": "fcm_token",
+                  "value": "token",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/login",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "otp",
+                  "value": "6571",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "011466133334",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "987654321",
+                  "type": "text"
+                },
+                {
+                  "key": "password confirmation",
+                  "value": "987654321",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/reset-password",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forget-password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "011466133334",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/forget-password",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "forget-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text"
+                },
+                {
+                  "key": "password confirmation",
+                  "value": "123456789",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/change-password",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/profile",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "edit profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "mahmoud123456",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/10/Downloads/1747234421_6824ae7586277.png"
+                },
+                {
+                  "key": "email",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "35d3cd29-4e64-420c-b6e6-2f06d3004789"
+                },
+                {
+                  "key": "phone",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "734e1734-7dd5-4ddb-af28-92c5e8129f8d"
+                },
+                {
+                  "key": "arrival_date",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "96fa5aac-c2d6-4baf-a4c3-88cea1c57a3b"
+                },
+                {
+                  "key": "departure_date",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "41ef97a2-a86f-4e71-8caa-81cb3d92a4ae"
+                },
+                {
+                  "key": "language",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "e7c63e3f-5b03-4c14-acad-de7a47e72548"
+                },
+                {
+                  "key": "city_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "b3223b34-9c08-451f-8856-94cd2909415e"
+                },
+                {
+                  "key": "hotel_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "d706de3a-e45f-48ae-bf12-bb65701f197d"
+                },
+                {
+                  "key": "hotel_id",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "d0562594-ca80-4b67-a094-15b2659ec047"
+                },
+                {
+                  "key": "fcm_token",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c6e0381e-2da2-4364-9b38-c4a7244ff5e3"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/profile",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "Ac",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/logout",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete_account",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/delete_account",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "delete_account"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Plan",
+      "item": [
+        {
+          "name": "getDate",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/plans",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "plans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Pro Plan\",\r\n  \"description\": \"Best plan for professionals\",\r\n  \"trial_period_days\": 7,\r\n  \"prices\": [\r\n    {\r\n      \"billing_cycle\": \"monthly\",\r\n      \"currency\": \"USD\",\r\n      \"price\": 10\r\n    },\r\n    {\r\n      \"billing_cycle\": \"yearly\",\r\n      \"currency\": \"USD\",\r\n      \"price\": 100\r\n    },\r\n    {\r\n      \"billing_cycle\": \"monthly\",\r\n      \"currency\": \"EGP\",\r\n      \"price\": 300\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/plans",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "plans"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/plans/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "plans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Pro Plan\",\r\n  \"_method\":\"PUT\",\r\n  \"description\": \"Best plan for professionals\",\r\n  \"trial_period_days\": 7,\r\n  \"prices\": [\r\n    {\r\n      \"billing_cycle\": \"monthly\",\r\n      \"currency\": \"USD\",\r\n      \"price\": 10\r\n    },\r\n    {\r\n      \"billing_cycle\": \"yearly\",\r\n      \"currency\": \"USD\",\r\n      \"price\": 100\r\n    },\r\n    {\r\n      \"billing_cycle\": \"monthly\",\r\n      \"currency\": \"EGP\",\r\n      \"price\": 300\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/plans/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "plans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/plans/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "plans",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Subscribe",
+      "item": [
+        {
+          "name": "getDate",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "1|aHfrWFSktrIsIoyvtbx1R32DmWI6MV9q5m3DyO1Qb7288547",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/subscriptions",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "plan_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1617b5bf-df57-4c18-91d9-01241406dc39"
+                },
+                {
+                  "key": "billing_cycle",
+                  "value": "monthly",
+                  "type": "text",
+                  "uuid": "076aa352-d40e-4c09-9144-b45d704b0f54"
+                },
+                {
+                  "key": "currency",
+                  "value": "USD",
+                  "type": "text",
+                  "uuid": "a14a7ff4-25f4-4515-9fc2-8393217ca367"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/subscriptions",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/subscriptions/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancel",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{url}}/subscriptions/1/cancel",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "item": [
+        {
+          "name": "getDate",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "1|vWKNoaGjyHVNzX4K6QQhtJq5HhvKiv2UUozhPEj2a4ed165d",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/subscriptions/1/payments",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"amount\": 100.50,\r\n    \"currency\": \"USD\",\r\n    \"status\": \"succeeded\",\r\n    \"metadata\": {\r\n        \"method\": \"credit_card\",\r\n        \"notes\": \"Paid via Stripe sandbox\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/subscriptions/1/payments",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "subscriptions",
+                "1",
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "http://127.0.0.1:8000/api"
+    },
+    {
+      "key": "base_url",
+      "value": "https://tashtibuk.rab7e.com/api"
+    }
+  ]
+}
